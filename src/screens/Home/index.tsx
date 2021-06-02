@@ -1,5 +1,5 @@
 import React, { FC, useState, useContext } from 'react';
-import { Grid, GridList, GridListTile, Typography, InputBase, IconButton, Hidden } from '@material-ui/core';
+import { Grid, Typography, InputBase, IconButton, Hidden } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import { CardGif, AlertGif } from './components';
 import { search_Gif } from '../../services/gifSearch';
