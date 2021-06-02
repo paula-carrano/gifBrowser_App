@@ -15,5 +15,5 @@ This project was created with:
 ### API
 I used GIPHY API (https://developers.giphy.com/)
 
-##DEMO
+### DEMO
 https://gipgbrowserapp.netlify.app/
