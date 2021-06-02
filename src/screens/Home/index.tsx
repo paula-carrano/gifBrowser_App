@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useContext } from 'react';
 import { Grid, GridList, GridListTile, Typography, InputBase, IconButton } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import { CardGif, AlertGif } from './components';
 import { search_Gif } from '../../services/gifSearch';
+import { LoadingContext } from '../../context/LoadingProvider'
 import { Gif } from './type'
 import './styles.css'
 
@@ -12,14 +13,20 @@ const Home: FC = () => {
     const [searchInput, setSearchInput] = useState("")
     const [gifSearched, setGifSearched] = useState<Gif[]>([])
     const [titleGif, setTitleGif] = useState("")
+    const { setLoading } = useContext(LoadingContext)
+
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setSearchInput(event.currentTarget.value)
     }
 
     const handleOnClick = () => {
+        setLoading(true)
         search_Gif(searchInput)
-            .then(r => setGifSearched(r.data.data))
+            .then(r => {
+                setGifSearched(r.data.data)
+                setLoading(false)
+            })
         setTitleGif(searchInput);
         setSearchInput("")
     };

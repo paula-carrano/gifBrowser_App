@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Card, CardActionArea, CardContent, Typography, GridJustification } from '@material-ui/core'
+import { Card, CardActionArea, CardContent, Typography } from '@material-ui/core'
 import { Gif } from '../../type';
 import './styles.css'
 
