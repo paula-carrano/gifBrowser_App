@@ -14,7 +14,7 @@ const CardGif: FC<{ data: Gif }> = ({ data }) => {
                         <iframe
                             src={embed_url}
                             frameBorder={0}
-                            width={250}
+                            width={200}
                             className="giphy-embed"
                             title={title}
                             allowFullScreen></iframe>
