@@ -22,11 +22,12 @@ const Home: FC = () => {
 
     const handleOnClick = () => {
         setLoading(true)
-        search_Gif(searchInput)
-            .then(r => {
-                setGifSearched(r.data.data)
-                setLoading(false)
-            })
+        setTimeout(() =>
+            search_Gif(searchInput)
+                .then(r => {
+                    setGifSearched(r.data.data)
+                    setLoading(false)
+                }), 1000)
         setTitleGif(searchInput);
         setSearchInput("")
     };

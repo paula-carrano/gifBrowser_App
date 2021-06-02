@@ -21,7 +21,7 @@ const CardGif: FC<{ data: Gif }> = ({ data }) => {
                     </CardContent>
                     <CardContent>
                         <Typography variant="body2" component="h6" className="ellipsis">
-                            {title}
+                            {title ? title : "GIF"}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
