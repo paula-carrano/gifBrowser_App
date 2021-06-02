@@ -35,7 +35,7 @@ const Home: FC = () => {
     return (
         <div>
             <Grid container spacing={2}>
-                <Grid sm={12} md={11} >
+                <Grid item sm={12} md={11} >
                     <InputBase
                         className="input_search"
                         placeholder="Search your GIF"
@@ -47,7 +47,7 @@ const Home: FC = () => {
                         }}
                     />
                 </Grid>
-                <Grid sm={12} md={1} >
+                <Grid item sm={12} md={1} >
                     <IconButton onClick={handleOnClick} aria-label="search"  >
                         <SearchIcon />
                     </IconButton>

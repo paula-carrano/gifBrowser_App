@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { AppBar, Toolbar, Typography, Link, Breadcrumbs, ListItemIcon } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Link, Breadcrumbs } from '@material-ui/core';
 import navLinks from './dataNav'
 import { MenuItem } from './type';
 
