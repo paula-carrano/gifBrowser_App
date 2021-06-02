@@ -20,6 +20,12 @@ const Home: FC = () => {
         setSearchInput(event.currentTarget.value)
     }
 
+    const onKeyPressHandler = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.code === "Enter") {
+            handleOnClick()
+        }
+    }
+
     const handleOnClick = () => {
         setLoading(true)
         setTimeout(() =>
@@ -39,16 +45,17 @@ const Home: FC = () => {
                     <InputBase
                         className="input_search"
                         placeholder="Search your GIF"
-                        onChange={(e) => handleInputChange(e)}
                         fullWidth
                         value={searchInput}
+                        onKeyPress={onKeyPressHandler}
+                        onChange={(e) => handleInputChange(e)}
                         inputProps={{
                             'aria-label': '"Search your GIF"', 'name': `'${searchInput}'`,
                         }}
                     />
                 </Grid>
                 <Grid item sm={12} md={1} >
-                    <IconButton onClick={handleOnClick} aria-label="search"  >
+                    <IconButton onClick={handleOnClick} aria-label="search">
                         <SearchIcon />
                     </IconButton>
                 </Grid>
@@ -61,8 +68,8 @@ const Home: FC = () => {
                     gifSearched ? (
                         gifSearched.map(g => {
                             return (
-                                <GridListTile>
-                                    <CardGif data={g} key={g.id} />
+                                <GridListTile key={g.id}>
+                                    <CardGif data={g} />
                                 </GridListTile>
                             )
                         }))
