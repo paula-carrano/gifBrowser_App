@@ -3,3 +3,8 @@
     padding: 5px;
     border-radius: 5px;
 }
+.principal_title{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
