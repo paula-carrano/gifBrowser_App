@@ -10,7 +10,7 @@ const Footer: FC = () => {
                 <Toolbar variant="dense">
                     <Typography variant="body2" color="inherit">
                         Dev by
-                        <Link href="https://github.com/paula-carrano" color="inherit"> Paula Carrano</Link>
+                        <Link href="https://github.com/paula-carrano/gifBrowser_App" color="inherit" target="_blank" rel="noreferrer"> Paula Carrano</Link>
                     </Typography>
                 </Toolbar>
             </AppBar>

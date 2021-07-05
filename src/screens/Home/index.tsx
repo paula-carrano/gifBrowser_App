@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { CardGif, AlertGif } from './components';
 import { search_Gif } from '../../services/gifSearch';
 import { LoadingContext } from '../../context/LoadingProvider'
-import { Gif } from './type'
+import { Gif } from '@services/type'
 import './styles.css'
 
 
@@ -28,12 +28,11 @@ const Home: FC = () => {
 
     const handleOnClick = () => {
         setLoading(true)
-        setTimeout(() =>
-            search_Gif(searchInput)
-                .then(r => {
-                    setGifSearched(r.data.data)
-                    setLoading(false)
-                }), 1000)
+        search_Gif(searchInput)
+            .then(r => {
+                setGifSearched(r)
+                setLoading(false)
+            })
         setTitleGif(searchInput);
         setSearchInput("")
     };
@@ -71,7 +70,7 @@ const Home: FC = () => {
                     gifSearched ? (
                         gifSearched.map(g => {
                             return (
-                                <Grid container item xs={12} md={3} key={g.id}>
+                                <Grid container item xs={12} md={3} key={g.id} >
                                     <CardGif data={g} />
                                 </Grid>
                             )
